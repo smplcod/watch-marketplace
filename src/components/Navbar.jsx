@@ -174,9 +174,15 @@ export default function Navbar() {
             component="div"
             sx={{ display: { xs: "none", sm: "block" } }}
           >
-            <Link to="/">JUT-SU</Link>
-            <Link to="/admin">Admin</Link>
-            <Link to="/admin/add">Add</Link>
+            <Link className="navbar-link" to="/">
+              JUT-SU
+            </Link>
+            <Link className="navbar-link" to="/admin">
+              Admin
+            </Link>
+            <Link className="navbar-link" to="/admin/add">
+              Add
+            </Link>
           </Typography>
           <Search>
             <SearchIconWrapper>
