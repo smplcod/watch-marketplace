@@ -1,0 +1,40 @@
+{
+  "watches": [
+    {
+      "name": "sad",
+      "brand": "asd",
+      "price": 200,
+      "year": "2022-07-08",
+      "photo": "asd",
+      "country": "germany",
+      "id": 1
+    },
+    {
+      "name": "asdasd",
+      "brand": "asdasd",
+      "price": 111,
+      "year": "2022-07-20",
+      "photo": "asdd",
+      "country": "japan",
+      "id": 2
+    },
+    {
+      "name": "55dfdf",
+      "brand": "sd",
+      "price": 222,
+      "year": "2022-07-21",
+      "photo": "sdasd",
+      "country": "germany",
+      "id": 3
+    },
+    {
+      "name": "sadasd",
+      "brand": "asdasd",
+      "price": 444,
+      "year": "2022-07-17",
+      "photo": "asdsad",
+      "country": "germany",
+      "id": 4
+    }
+  ]
+}
