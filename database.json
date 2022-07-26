@@ -1,7 +1,7 @@
 {
   "watches": [
     {
-      "name": "sad",
+      "name": "happy",
       "brand": "asd",
       "price": 200,
       "year": "2022-07-08",
@@ -10,22 +10,13 @@
       "id": 1
     },
     {
-      "name": "asdasd",
+      "name": "asdasd2",
       "brand": "asdasd",
       "price": 111,
       "year": "2022-07-20",
       "photo": "asdd",
       "country": "japan",
       "id": 2
-    },
-    {
-      "name": "55dfdf",
-      "brand": "sd",
-      "price": 222,
-      "year": "2022-07-21",
-      "photo": "sdasd",
-      "country": "germany",
-      "id": 3
     },
     {
       "name": "sadasd",
