@@ -6,18 +6,30 @@ import {
   CardContent,
   CardMedia,
   Typography,
+  Slider,
 } from "@mui/material";
 import { ClientContext } from "../contexts/ClientProvider";
 
 function MainPage() {
-  const { getWatches, watches } = React.useContext(ClientContext);
+  const { getWatches, watches, filterByPrice, setFilterByPrice } =
+    React.useContext(ClientContext);
   React.useEffect(() => {
     getWatches();
-  }, []);
+  }, [filterByPrice]);
   return (
     <div className="main-page">
       <Container>
         <h2>All watches catalog</h2>
+        <div className="filter-block">
+          <h4>Filter by price:</h4>
+          <Slider
+            max={999999}
+            min={0}
+            valueLabelDisplay="auto"
+            value={filterByPrice}
+            onChange={(_, newValue) => setFilterByPrice(newValue)}
+          />
+        </div>
         <div className="products">
           {watches.map((item) => (
             <Card key={item.id} className="product-card">

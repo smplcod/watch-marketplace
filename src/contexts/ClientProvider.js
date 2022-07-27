@@ -19,10 +19,12 @@ function ClientProvider({ children }) {
   });
 
   const [searchWord, setSearchWord] = React.useState("");
-  const [filterByPrice, setFilterByPrice] = React.useState(0);
+  const [filterByPrice, setFilterByPrice] = React.useState([0, 999999]);
 
   const getWatches = () => {
-    fetch(`${watchesApi}?q=${searchWord}`)
+    fetch(
+      `${watchesApi}?q=${searchWord}&price_gte=${filterByPrice[0]}&price_lte=${filterByPrice[1]}`
+    )
       .then((res) => res.json())
       .then((data) => {
         dispatch({
@@ -34,9 +36,11 @@ function ClientProvider({ children }) {
   const data = {
     watches: state.watches,
     searchWord,
+    filterByPrice,
 
     getWatches,
     setSearchWord,
+    setFilterByPrice,
   };
   // console.log(searchWord);
 
