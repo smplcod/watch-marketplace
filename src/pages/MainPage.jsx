@@ -7,15 +7,25 @@ import {
   CardMedia,
   Typography,
   Slider,
+  Pagination,
+  Button,
 } from "@mui/material";
 import { ClientContext } from "../contexts/ClientProvider";
 
 function MainPage() {
-  const { getWatches, watches, filterByPrice, setFilterByPrice } =
-    React.useContext(ClientContext);
+  const {
+    getWatches,
+    watches,
+    filterByPrice,
+    setFilterByPrice,
+    pagesCount,
+    currentPage,
+    setCurrentPage,
+    addWatchToBasket,
+  } = React.useContext(ClientContext);
   React.useEffect(() => {
     getWatches();
-  }, [filterByPrice]);
+  }, [filterByPrice, currentPage]);
   return (
     <div className="main-page">
       <Container>
@@ -60,9 +70,23 @@ function MainPage() {
                     <span>{item.price}</span>
                   </li>
                 </ul>
+                <Button
+                  variant="outlined"
+                  onClick={() => addWatchToBasket(item)}
+                >
+                  Add to cart
+                </Button>
               </CardContent>
             </Card>
           ))}
+        </div>
+        <div className="pagination-block">
+          <Pagination
+            onChange={(_, newValue) => setCurrentPage(newValue)}
+            count={pagesCount}
+            variant="outlined"
+            shape="rounded"
+          />
         </div>
       </Container>
     </div>
